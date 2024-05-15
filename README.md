@@ -20,6 +20,7 @@ The default update interval is set to 5 seconds, which is a balanced choice for 
   - [JavaScript](#javascript)
   - [CSS](#css)
 - [Error Handling and UI Feedback](#error-handling-and-ui-feedback)
+- [Deployment and Live Server Issues](#deployment-and-live-server-issues)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -51,7 +52,7 @@ cd iss-location-tracker
 
 # Open the project in your favorite code editor.
 
-# Open index.html in your web browser to view the application. 
+# Open index.html in your web browser to view the application.
 # This can be done by right clicking on the index.html file and selecting "open with live server".
 ```
 
@@ -71,6 +72,7 @@ cd iss-location-tracker
 ## Code Overview
 
 ## HTML
+
 The index.html file sets up the structure of the web application, including:
 
 - Header and title.
@@ -90,6 +92,7 @@ The js/script.js file contains the logic for:
 - Initializing and updating the Leaflet map.
 
 ## CSS
+
 - The css/styles.css file styles the web application, including the layout, typography, and custom switch for the "Follow ISS" feature.
 
 ## Error Handling and UI Feedback
@@ -97,9 +100,32 @@ The js/script.js file contains the logic for:
 - If the data cannot be fetched or the API is down, the UI will display "Data unavailable" messages.
 - If the fetch operation takes longer than 500ms, a loading message will be displayed to indicate that the data is being fetched.
 
+## Deployment and Live Server Issues
+
+### Issue Description
+
+Due to security policies in modern web browsers, the live version of this ISS Tracker may not display data as expected when hosted on platforms enforcing HTTPS, such as GitHub Pages. This is primarily due to the external ISS tracking API (`http://api.open-notify.org/iss-now.json`) being served over HTTP and not supporting CORS (Cross-Origin Resource Sharing), which is required for cross-domain requests in web applications.
+
+### Running Locally
+
+To experience the full functionality of this application, you are encouraged to run it locally. Here are the steps:
+
+1. Clone the repository to your local machine.
+2. Open the project in a web browser directly from the file system, or serve it using a simple HTTP server.
+
+### Possible Solutions
+
+- **Proxy Server**: Setting up a proxy server to handle API requests can mitigate the issue. This server would fetch data from the ISS API and forward it to the frontend over HTTPS.
+- **API Alternatives**: Utilizing an alternative API that supports HTTPS and proper CORS settings could also resolve the problem.
+
+### Future Enhancements
+
+I am exploring solutions like implementing a backend proxy to handle data fetching securely and reliably. Updates will be documented in this project's progress.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
 ## License
+
 This project was created by Melihhan (https://github.com/M311HAN). [Visit the repository](https://github.com/M311HAN?tab=repositories) for more projects and further collaboration.

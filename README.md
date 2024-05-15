@@ -51,7 +51,8 @@ cd iss-location-tracker
 
 # Open the project in your favorite code editor.
 
-# Open index.html in your web browser to view the application. This can be done by right clicking on the index.html file and selecting "open with live server".
+# Open index.html in your web browser to view the application. 
+# This can be done by right clicking on the index.html file and selecting "open with live server".
 ```
 
 ## File Structure

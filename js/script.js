@@ -11,35 +11,42 @@ function fetchISSLocation() {
     }
   }, 500); // Delay loading message
 
-  fetch("http://api.open-notify.org/iss-now.json")
-    .then((response) => response.json())
-    .then((data) => {
-      isDataLoaded = true;
-      clearTimeout(loadingTimeout);
+  // Function to fetch ISS data from a given URL
+  function fetchFromUrl(url) {
+    return fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        isDataLoaded = true;
+        clearTimeout(loadingTimeout);
 
-      // Update HTML with the ISS data
-      document.getElementById("latitude").textContent =
-        data.iss_position.latitude;
-      document.getElementById("longitude").textContent =
-        data.iss_position.longitude;
-      document.getElementById("timestamp").textContent = data.timestamp;
-      const readableDate = new Date(data.timestamp * 1000);
-      const options = {
-        weekday: "long", // include the day of the week
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZoneName: "short",
-      };
-      document.getElementById("date-time").textContent =
-        readableDate.toLocaleString(undefined, options);
-      // Update the map with the new ISS position
-      updateMap(data.iss_position.latitude, data.iss_position.longitude);
-    })
-    .catch((error) => {
+        // Update HTML with the ISS data
+        document.getElementById("latitude").textContent =
+          data.iss_position.latitude;
+        document.getElementById("longitude").textContent =
+          data.iss_position.longitude;
+        document.getElementById("timestamp").textContent = data.timestamp;
+        const readableDate = new Date(data.timestamp * 1000);
+        const options = {
+          weekday: "long", // include the day of the week
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          timeZoneName: "short",
+        };
+        document.getElementById("date-time").textContent =
+          readableDate.toLocaleString(undefined, options);
+        // Update the map with the new ISS position
+        updateMap(data.iss_position.latitude, data.iss_position.longitude);
+      });
+  }
+
+  // Try fetching from HTTPS first, fall back to HTTP if it fails
+  fetchFromUrl("https://api.open-notify.org/iss-now.json").catch(() => {
+    console.warn("HTTPS fetch failed, falling back to HTTP");
+    fetchFromUrl("http://api.open-notify.org/iss-now.json").catch((error) => {
       console.error("Error fetching ISS location:", error);
       clearTimeout(loadingTimeout);
       document.getElementById("latitude").textContent = "Data unavailable";
@@ -48,6 +55,7 @@ function fetchISSLocation() {
       document.getElementById("date-time").textContent =
         "Data could not be retrieved";
     });
+  });
 }
 
 // Initial call and interval setup for fetching ISS location

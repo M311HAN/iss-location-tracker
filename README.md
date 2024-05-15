@@ -1,6 +1,6 @@
 # ISS Location Tracker
 
-[Check out the live site here!](https://github.com/M311HAN/iss-location-tracker/)
+[Check out the live site here!](https://m311han.github.io/iss-location-tracker/)
 
 ![iss tracker homepage](images/iss-tracker.png)
 

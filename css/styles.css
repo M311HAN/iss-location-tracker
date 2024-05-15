@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url("../images/earth.jpg"); /* Adjust the path if necessary */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Black outline */
+}
+
+h1 {
+  margin-top: 0;
+  font-family: "Orbitron", sans-serif;
+  color: #e0e0e0; /* Light gray, reminiscent of a spacecraft hull */
+  background-image: url("../images/earth-header.jpg");
+  background-size: cover; /* Cover ensures the background image is scaled to cover the entire container */
+  background-position: center;
+  padding: 35px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle outer glow */ /* Adjusts text size based on the width of the viewport */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Black outline */
+}
+@media (max-width: 600px) {
+  h1 {
+    background-size: cover;
+    padding: 20px;
+    font-size: 5.5vw; /* Increases size for better readability on smaller devices */
+  }
+}
+
+#location p {
+  font-size: 20px;
+}
+
+#location span {
+  font-weight: bold;
+}
+
+#mapid {
+  height: 500px;
+  width: 100%; /* ensures the map takes the full width */
+  margin: auto;
+}
+
+#update-interval {
+  margin: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.switch-container {
+  text-align: center; /* Center the switch horizontally */
+  margin-bottom: 10px; /* Adds space between the switch and the map */
+}
+
+.label-text {
+  display: inline-block;
+  vertical-align: middle; /* Aligns text vertically with the switch */
+  margin-left: 5px; /* Space between the toggle and the text */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align: middle; /* Aligns the switch vertically with the text */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

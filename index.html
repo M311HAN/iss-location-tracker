@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Location Tracker</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google font for stylish text -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <!-- Leaflet JS for map functionality -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>International Space Station Location</h1>
+    <!-- Label for the dropdown to adjust update intervals -->
+    <label for="update-interval">Update Interval:</label>
+    <!-- Dropdown to select how often to refresh ISS data -->
+    <select id="update-interval">
+      <option value="1000">1 Second</option>
+      <option value="5000" selected>5 Seconds</option>
+      <option value="10000">10 Seconds</option>
+      <option value="30000">30 Seconds</option>
+    </select>
+    <div id="location">
+      <!-- Displays the ISS's latitude, ISS's longitude, and last update timestamp  -->
+      <p>Latitude: <span id="latitude"></span></p>
+      <p>Longitude: <span id="longitude"></span></p>
+      <p>Timestamp: <span id="timestamp"></span></p>
+      <!-- Converts timestamp to readable date & time -->
+      <p>Date & Time: <span id="date-time"></span></p>
+    </div>
+    <div class="switch-container">
+        <!-- Custom switch for toggling ISS follow feature -->
+        <label class="switch">
+            <input type="checkbox" id="follow-iss" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="label-text">Follow ISS</span>
+    </div>
+    <!-- Container for the Leaflet map -->
+    <div id="mapid"></div>
+    <!-- Link to external JavaScript file for map logic -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -13,8 +13,8 @@ How the map looks like in the browser interface, providing the user an option fo
 
 ## Table of Contents
 
-- [Features](#features)
 - [Containerization](#Containerization)
+- [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [File Structure](#file-structure)

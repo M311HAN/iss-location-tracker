@@ -84,14 +84,15 @@ docker start <container_id>
 docker rm <container_id>
 ```
 
-2. **Remove the Docker Image**:
+**2. Remove the Docker Image:**
    To free up space, you can also remove the Docker image from your local machine:
 
 ```bash
 docker rmi melihhan/iss-tracker
 ```
 
-**Note:**You can always pull the image again from Docker Hub later if needed by running the following:
+### Note:
+You can always pull the image again from Docker Hub later if needed by running the following:
 
 ```bash
 # Pull the image from Docker Hub (if it’s no longer on your local machine):

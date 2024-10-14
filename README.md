@@ -8,6 +8,9 @@ The ISS Location Tracker is a web application that tracks the current location o
 
 The default update interval is set to 5 seconds, which is a balanced choice for tracking the ISS. It is frequent enough to provide reasonably current data without being overly demanding on resources. While updating every second might offer more real-time data, it could be overkill and place unnecessary load on the server. By providing an option for users to customize the interval time, the application caters to varying needs and preferences. Additionally, users can toggle the "Follow ISS" feature to automatically pan the map to the ISS's position.
 
+How the map looks like in the browser interface, providing the user an option for tracking:
+![iss tracker homepage](images/Map.png)
+
 ## Table of Contents
 
 - [Features](#features)

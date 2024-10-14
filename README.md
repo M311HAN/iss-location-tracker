@@ -34,17 +34,17 @@ This project is containerized using Docker, allowing it to run on any machine wi
 
 ### Pull and Run the Docker Container
 
-1. Install Docker
+**1. Install Docker:**
    If you haven't installed Docker yet, download it from Docker's [official website.](https://www.docker.com)
 
-2. Pull the Docker Imgage
+**2. Pull the Docker Image:**
    You can pull the pre-built Docker image from Docker Hub using the following command:
 
 ```bash
 docker pull melihhan/iss-tracker
 ```
 
-3. Run the Container
+**3. Run the Container:**
    After pulling the image, you can run the container by mapping port 8080 on your local machine to port 80 in the container:
 
 ```bash
@@ -55,7 +55,7 @@ The application will now be accessible at `http://localhost:8080` in your web br
 
 ### Stopping and Restarting the Docker Container
 
-1. Stop the Running Container
+**1. Stop the Running Container:**
    To stop the container, first list all running containers to find the container ID:
 
 ```bash
@@ -68,7 +68,7 @@ Then, stop the container using the container ID:
 docker stop <container_id>
 ```
 
-2. Restart the Stopped Container
+**2. Restart the Stopped Container:**
    If the container has been stopped, you can start it again without having to pull the image again:
 
 ```bash
@@ -77,14 +77,14 @@ docker start <container_id>
 
 ### Removing the Docker Container and Image (Optional)
 
-1. Remove the Stopped Container
+**1. Remove the Stopped Container:**
    If you no longer need the container, you can remove it:
 
 ```bash
 docker rm <container_id>
 ```
 
-2. Remove the Docker Image
+2. **Remove the Docker Image**:
    To free up space, you can also remove the Docker image from your local machine:
 
 ```bash

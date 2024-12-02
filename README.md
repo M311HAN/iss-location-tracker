@@ -1,6 +1,8 @@
 # ISS Location Tracker
 
-[Check out the live site here!](https://m311han.github.io/iss-location-tracker/)
+[Check out the live site here on Netlify!](https://isslocationtracker.netlify.app)
+
+[Check out the live site here on Github pages!](https://m311han.github.io/iss-location-tracker/)
 
 ![iss tracker homepage](images/iss-tracker.png)
 
